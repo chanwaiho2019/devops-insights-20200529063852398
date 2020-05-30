@@ -10,7 +10,7 @@ var request = REQUEST.defaults( {
 var OPENWEATHERURL = "https://api.openweathermap.org/data/2.5/weather?appid=6b7b471967dd0851d0010cdecf28f829&units=metric";
 
 exports.getWeather = function(req, res) {
-	var city = req.query.city;
+	var city = req.query.name;
 	if( (city === null) || (typeof(city) === 'undefined') ) {
 		return res.status(400).send('city missing');
 	}
@@ -70,6 +70,7 @@ exports.getWeather2 = function(req, res) {
 };
 router.get('/getWeather2', exports.getWeather2);
 */
+/*
 exports.getWeather3 = function(req, res) {
 	var zip = req.query.zip;
 	if( (zip === null) || (typeof(zip) === 'undefined') ) {
@@ -99,5 +100,5 @@ exports.getWeather3 = function(req, res) {
 
 };
 router.get('/getWeather3', exports.getWeather3);
-
+*/
 exports.router = router;
